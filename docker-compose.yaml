@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  laravel-app:
+    build: .
+    container_name: app.qrcode-generator
+    ports:
+      - "8091:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./docker/nginx_conf:/etc/nginx/conf.d
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
