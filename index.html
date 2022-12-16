@@ -27,7 +27,7 @@
         qrcode.makeCode("https://github.com/devfelip");
 
         $("#txt_url").
-            on("keyup", function () {
+            on("input", function () {
                 if (url.val())
                     qrcode.makeCode(url.val());
                 else
