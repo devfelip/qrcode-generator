@@ -5,31 +5,33 @@
     <title>QRCode generator</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/qrcode.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <input id="text" type="text" style="width:80%" placeholder="URL" /><br />
-    <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+    <input id="txt_url" class="form-control" type="text" placeholder="ENTER URL TO CONVERT IN QRCODE" /><br />
+    <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
 
     <script type="text/javascript">
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: 100,
-            height: 100
+            width: 200,
+            height: 200
         });
 
-        function makeCode() {
-            var elText = document.getElementById("text");
-
-            qrcode.makeCode(elText.value);
-        }
+        var url = $("#txt_url");
 
         qrcode.makeCode("https://github.com/devfelip");
 
-        $("#text").
+        $("#txt_url").
             on("keyup", function () {
-                makeCode();
+                if (url.val())
+                    qrcode.makeCode(url.val());
+                else
+                    qrcode.makeCode("https://github.com/devfelip");
             });
     </script>
 </body>
