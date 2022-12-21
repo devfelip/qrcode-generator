@@ -1,5 +1,9 @@
-FROM felipecs8/nginx-php-composer:php80
+FROM nginx:1.23.3-alpine
 
 WORKDIR /usr/share/nginx/html
 
-CMD /start.sh
+COPY ./docker/nginx_conf/default.conf /etc/nginx/conf.d/default.conf
+
+COPY . .
+
+RUN rm -r docker
