@@ -34,11 +34,16 @@ qrcode.makeCode("http://google.com"); // make another code.
 ```
 
 ## Docker
+
+```
 docker run --name app.qrcode-generator -d -p 8091:80 felipecs8/qrcode-generator
+```
 
 or
 
+```
 docker compose up -d
+```
 
 ## Browser Compatibility
 IE6~10, Chrome, Firefox, Safari, Opera, Mobile Safari, Android, Windows Mobile, ETC.
