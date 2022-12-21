@@ -2,24 +2,20 @@
 <html>
 
 <head>
-    <title>QRCode Generator</title>
+    <title>QRCode Generator | Print</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/qrcode.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <input id="txt_url" class="form-control" type="text" placeholder="ENTER URL TO CONVERT IN QRCODE" /><br />
-
     <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div><br>
-
-    <a href="" id="btn_print">PRINT QRCODE <i class="fa-solid fa-print"></i></a>
+    <span id="txt_url"></span>
 
     <script type="text/javascript">
         var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -27,13 +23,14 @@
             height: 200
         });
 
-        qrcode.makeCode("https://github.com/devfelip");
+        var url_qrcode = $("#txt_url");
 
-        $("#txt_url").on("input", function () {
-            if ($(this).val())
-                qrcode.makeCode($(this).val());
-            else
-                qrcode.makeCode("https://github.com/devfelip");
+        qrcode.makeCode($.urlParam('url'));
+
+        url_qrcode.html($.urlParam('url'));
+
+        $(function () {
+            window.print();
         });
     </script>
 </body>
