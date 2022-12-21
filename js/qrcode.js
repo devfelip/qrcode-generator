@@ -511,7 +511,7 @@ var QRCode;
 	 * @class QRCode
 	 * @constructor
 	 * @example 
-	 * new QRCode(document.getElementById("test"), "http://jindo.dev.naver.com/collie");
+	 * new QRCode(document.getElementById("test"), "https://github.com/devfelip");
 	 *
 	 * @example
 	 * var oQRCode = new QRCode("test", {
