@@ -45,6 +45,9 @@ or
 docker compose up -d
 ```
 
+## ONLY QRCODE GEN
+http://localhost/qrcode-generator/qrcode.html?url=github.com/devfelip
+
 ## Browser Compatibility
 IE6~10, Chrome, Firefox, Safari, Opera, Mobile Safari, Android, Windows Mobile, ETC.
 
