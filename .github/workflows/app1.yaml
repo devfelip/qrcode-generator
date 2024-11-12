@@ -1,18 +1,18 @@
 name: 'Container CI'
 
 on:
-  
+  pull_request: # [main]
+    branches:
+      - main
+    paths:
+      - .
   #push:
   #  branches:
   #    - main
   #  paths:
   #    - app1/**
   
-  pull_request: # [main]
-    branches:
-      - main
-    paths:
-      - .
+
 
 jobs:
 
