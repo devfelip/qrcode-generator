@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: app
-        image: felipecs8/conversao-temperatura:latest
+        image: felipecs8/conversao-temperatura:v1
         ports:
         - containerPort: 8080
