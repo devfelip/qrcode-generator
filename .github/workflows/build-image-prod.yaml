@@ -1,19 +1,11 @@
 name: 'Container CI'
 
 on:
-  pull_request: # [main]
+  pull_request:
     branches:
       - main
-  #push:
-  #  branches:
-  #    - main
-  #  paths:
-  #    - app1/**
-  
-
 
 jobs:
-
   container:
     name: 'Container'
     runs-on: ubuntu-latest
@@ -48,4 +40,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/conversao-temperatura:v1
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/conversao-temperatura:latest
