@@ -9,6 +9,8 @@ on:
   #    - app1/**
   
   pull_request: # [main]
+    branches:
+      - main
     paths:
       - .
 
