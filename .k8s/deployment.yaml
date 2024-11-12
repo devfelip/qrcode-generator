@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversor-temperatura
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: conversor-temperatura
+  template:
+    metadata:
+      labels:
+        app: conversor-temperatura
+    spec:
+      containers:
+      - name: app
+        image: felipecs8/conversao-temperatura:latest
+        ports:
+        - containerPort: 8080
