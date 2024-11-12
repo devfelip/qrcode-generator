@@ -35,4 +35,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/conversao-temperatura:v1
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/qrcode-generator:v1

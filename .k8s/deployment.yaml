@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: conversor-temperatura
+  name: qrcode-generator
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: conversor-temperatura
+      app: qrcode-generator
   template:
     metadata:
       labels:
-        app: conversor-temperatura
+        app: qrcode-generator
     spec:
       containers:
       - name: app
-        image: felipecs8/conversao-temperatura:v1
+        image: felipecs8/qrcode-generator:v1
         ports:
         - containerPort: 8080
