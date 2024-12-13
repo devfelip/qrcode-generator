@@ -16,4 +16,4 @@ spec:
       - name: app
         image: felipecs8/qrcode-generator:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
