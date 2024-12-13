@@ -4,6 +4,4 @@ WORKDIR /usr/share/nginx/html
 
 COPY ./docker/nginx_conf/default.conf /etc/nginx/conf.d/default.conf
 
-COPY . .
-
-RUN rm -r docker
+COPY ./src .

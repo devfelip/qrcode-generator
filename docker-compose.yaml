@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-  laravel-app:
+  app:
     build: .
     container_name: app.qrcode-generator
     ports:
       - "8091:80"
-    volumes:
-      - ./:/usr/share/nginx/html
-      - ./docker/nginx_conf:/etc/nginx/conf.d
     networks:
-      - app-network
+      - default
+      - interdocker
     restart: unless-stopped
 
 networks:
-  app-network:
+  default:
     driver: bridge
+  interdocker:
+    external: true
