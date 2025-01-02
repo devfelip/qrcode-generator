@@ -1,0 +1,10 @@
+application:
+  replicas: 1
+  image:
+    name: felipecs8/qrcode-generator
+    tag: v1
+  service:
+    type: ClusterIP
+  ingress:
+    hosts:
+    - qrcode.127.0.0.1.nip.io
