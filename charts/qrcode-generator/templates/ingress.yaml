@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-qrcode-generator-helm-ingress
+spec:
+  rules:
+  {{- range .Values.application.ingress.hosts }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Release.Name }}-qrcode-generator-helm
+                port:
+                  number: 80
+  {{- end }}
